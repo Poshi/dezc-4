@@ -184,6 +184,9 @@ models:
       - name: locationid
         data_type: int64
         description: ""
+        constraints:
+          - type: not_null
+          - type: primary_key
 
       - name: borough
         data_type: string

@@ -125,7 +125,6 @@ models:
               severity: warn
           - not_null:
               severity: warn
-          
 
       - name: service_type
         data_type: string

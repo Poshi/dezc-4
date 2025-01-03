@@ -44,6 +44,7 @@ with
     )
 select
     tripid,
+    service_type,
     trips_unioned.pickup_locationid, 
     pickup_zone.borough as pickup_borough, 
     pickup_zone.zone as pickup_zone, 

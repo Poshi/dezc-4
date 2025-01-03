@@ -111,7 +111,7 @@ models:
         data_type: string
         description: ""
 
-  - name: fact_all_services-trips
+  - name: fact_all_services_trips
     description: >
       Trips corresponding to all services (Green, yellow and FHV).
       The table contains records where both pickup and dropoff locations are valid and known zones. 

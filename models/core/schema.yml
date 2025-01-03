@@ -111,6 +111,69 @@ models:
         data_type: string
         description: ""
 
+  - name: fact_all_services-trips
+    description: >
+      Trips corresponding to all services (Green, yellow and FHV).
+      The table contains records where both pickup and dropoff locations are valid and known zones. 
+      Each record corresponds to a trip uniquely identified by tripid. 
+    columns:
+      - name: tripid
+        data_type: string
+        description: "unique identifier conformed by the combination of vendorid and pickyp time"
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+          
+
+      - name: service_type
+        data_type: string
+        description: ""
+
+      - name: pickup_locationid
+        data_type: int64
+        description: ""
+        tests:
+          - relationships:
+              field: locationid
+              to: ref('taxi_zone_lookup')
+              severity: warn
+
+      - name: pickup_borough
+        data_type: string
+        description: ""
+
+      - name: pickup_zone
+        data_type: string
+        description: ""
+
+      - name: dropoff_locationid
+        data_type: int64
+        description: ""
+        tests:
+          - relationships:
+              field: locationid
+              to: ref('taxi_zone_lookup')
+              severity: warn
+
+      - name: dropoff_borough
+        data_type: string
+        description: ""
+
+      - name: dropoff_zone
+        data_type: string
+        description: ""
+
+      - name: pickup_datetime
+        data_type: timestamp
+        description: ""
+
+      - name: dropoff_datetime
+        data_type: timestamp
+        description: ""
+
+
   - name: dm_monthly_zone_revenue
     description: >
       Aggregated table of all taxi trips corresponding to both service zones (Green and yellow) per pickup zone, month and service.

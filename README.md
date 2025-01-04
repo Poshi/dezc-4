@@ -31,3 +31,6 @@ In a production environment, some benchmarking would have to be done to choose
 the best path.
 Probably it would be better to use the second option, as using already computed
 data should lower the costs and increase the efficiency.
+
+As required for the homework, the data generated can be visualized in [Looker
+Studio](https://lookerstudio.google.com/s/rxLW7RRKgqM)

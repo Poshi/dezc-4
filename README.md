@@ -26,3 +26,8 @@ That would avoid the need to do an extra merge of the zone data.
 On the other size, a drawback would had been that the table materialization
 would had to wait for those tables to be generated before starting with this
 one, while with the approach I choose the generation can be done in parallel.
+
+In a production environment, some benchmarking would have to be done to choose
+the best path.
+Probably it would be better to use the second option, as using already computed
+data should lower the costs and increase the efficiency.

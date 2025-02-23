@@ -23,11 +23,7 @@ select
     Affiliated_base_number
 
 from tripdata
-where
-        EXTRACT(YEAR from pickup_datetime) = 2019
-    and PULocationID is not null
-    and DOLocationID is not null
-
+where dispatching_base_num is not null
 
 -- dbt build --select <model_name> --vars '{'is_test_run': 'false'}'
 {% if var("is_test_run", default=true) %}
